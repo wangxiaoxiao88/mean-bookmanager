@@ -1,0 +1,11 @@
+{
+	"name": "mean-bookmanager",
+	"version": "0.0.1",
+	"description": "Simple BookManager in MEAN",
+	"main": "server.js",
+	"author": "Wang Xiaoxiao <wc529065@gmail.com>",
+	"dependencies": {
+		"express": "~3.4.4",
+		"mongoose": "~3.6.2"
+	}
+}
