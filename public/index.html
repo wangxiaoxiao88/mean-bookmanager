@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="angularBook">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>book manager</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="mainController">
+	<div class=page>
+		<h1>Book Manager</h1>
+
+		<form class=add-entry>
+			<dl>
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type=text size=30 ng-model="formData.name"></td>
+					</tr>
+					<tr>
+						<td>Author:</td>
+						<td><input type=text size=30 ng-model="formData.author"></td>
+					</tr>
+					<tr>
+						<td>Price:</td>
+						<td><input type=text size=30 ng-model="formData.price"></td>
+					</tr>
+					<tr>
+						<td>Url:</td>
+						<td><input type=text size=30 ng-model="formData.url"></td>
+					</tr>
+				</table>
+				<input type=submit value=Add ng-click="addBook()">
+			</dl>
+		</form>
+
+		<div class=books>
+			<div class=book ng-repeat="book in books">
+				<div class=pic><img ng-src="{{ book.url }}" height=160 width=160>
+				</div>
+				<div class=moreinfo>
+					<div class=name>{{ book.name }}</div>
+					<div class=author>{{ book.author }}</div> 
+					<div class=price>{{ book.price }}</div>
+					<div class=delbut>
+						<form method=post>
+							<input type=submit value=Delete class=delBut ng-click="delBook(book._id)">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://cdn.staticfile.org/angular.js/1.3.0-beta.13/angular.min.js"></script>
+	<script src="main.js"></script>
+	</body>
+</html>
